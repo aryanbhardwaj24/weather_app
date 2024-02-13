@@ -13,6 +13,7 @@ class WeatherScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        centerTitle: true,
       ),
     );
   }
