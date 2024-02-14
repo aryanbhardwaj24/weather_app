@@ -15,7 +15,7 @@ class WeatherScreen extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
-          GestureDetector(
+          InkWell(
             onTap: () => print('refresh'),
             child: const Icon(Icons.refresh),
           ),
