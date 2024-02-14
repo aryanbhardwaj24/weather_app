@@ -81,11 +81,14 @@ class WeatherScreen extends StatelessWidget {
             ),
 
             //weather forecast cards
-            const Text(
-              'Weather Forecast',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Weather Forecast',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
 
