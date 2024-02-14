@@ -24,9 +24,7 @@ class WeatherScreen extends StatelessWidget {
       body: const Column(
         children: [
           //main card
-          Placeholder(
-            fallbackHeight: 250,
-          ),
+          Card(),
 
           SizedBox(
             height: 25,
