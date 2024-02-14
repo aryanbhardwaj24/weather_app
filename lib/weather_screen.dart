@@ -21,8 +21,8 @@ class WeatherScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             //main card
@@ -30,7 +30,10 @@ class WeatherScreen extends StatelessWidget {
               width: double.infinity,
               child: Card(
                 elevation: 10,
-                child: Padding(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
                     children: [
@@ -63,21 +66,21 @@ class WeatherScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
 
             //weather forecast cards
-            Placeholder(
+            const Placeholder(
               fallbackHeight: 150,
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
 
             //additionl info
-            Placeholder(
+            const Placeholder(
               fallbackHeight: 150,
             ),
           ],
