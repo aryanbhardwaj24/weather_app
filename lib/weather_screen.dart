@@ -21,6 +21,32 @@ class WeatherScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: const Column(
+        children: [
+          //main card
+          Placeholder(
+            fallbackHeight: 250,
+          ),
+
+          SizedBox(
+            height: 25,
+          ),
+
+          //weather forecast cards
+          Placeholder(
+            fallbackHeight: 150,
+          ),
+
+          SizedBox(
+            height: 25,
+          ),
+
+          //additionl info
+          Placeholder(
+            fallbackHeight: 150,
+          ),
+        ],
+      ),
     );
   }
 }
