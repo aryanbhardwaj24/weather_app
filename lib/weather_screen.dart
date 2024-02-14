@@ -21,20 +21,23 @@ class WeatherScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Column(
+      body: Column(
         children: [
           //main card
-          Card(
-            child: Column(
-              children: [
-                Text(
-                  '300 K',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
+          Container(
+            width: double.infinity,
+            child: const Card(
+              child: Column(
+                children: [
+                  Text(
+                    '300 K',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
 
