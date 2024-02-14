@@ -42,6 +42,12 @@ class WeatherScreen extends StatelessWidget {
                       Icons.cloud,
                       size: 64,
                     ),
+                    Text(
+                      'Rain',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
                   ],
                 ),
               ),
