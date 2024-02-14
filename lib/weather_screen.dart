@@ -14,8 +14,10 @@ class WeatherScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        actions: const [
-          Icon(Icons.refresh),
+        actions: [
+          GestureDetector(
+            child: const Icon(Icons.refresh),
+          ),
         ],
       ),
     );
