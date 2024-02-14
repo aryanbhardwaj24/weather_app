@@ -34,39 +34,42 @@ class WeatherScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(
-                    sigmaX: 10,
-                    sigmaY: 10,
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          '300 K',
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                      sigmaX: 10,
+                      sigmaY: 10,
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          Text(
+                            '300 K',
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 16,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 64,
-                        ),
-                        SizedBox(
-                          height: 16,
-                        ),
-                        Text(
-                          'Rain',
-                          style: TextStyle(
-                            fontSize: 20,
+                          SizedBox(
+                            height: 16,
                           ),
-                        ),
-                      ],
+                          Icon(
+                            Icons.cloud,
+                            size: 64,
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Text(
+                            'Rain',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
