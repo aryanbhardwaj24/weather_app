@@ -16,6 +16,7 @@ class WeatherScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           GestureDetector(
+            onTap: () => print('refresh'),
             child: const Icon(Icons.refresh),
           ),
         ],
