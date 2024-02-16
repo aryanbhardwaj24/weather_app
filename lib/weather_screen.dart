@@ -132,6 +132,9 @@ class WeatherScreen extends StatelessWidget {
                       Icons.water_drop,
                       size: 32,
                     ),
+                    SizedBox(
+                      height: 8,
+                    ),
                   ],
                 )
               ],
