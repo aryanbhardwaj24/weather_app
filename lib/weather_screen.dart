@@ -112,8 +112,12 @@ class WeatherScreen extends StatelessWidget {
             ),
 
             //additionl info
-            const Placeholder(
-              fallbackHeight: 150,
+            const Text(
+              'Additional Information',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
