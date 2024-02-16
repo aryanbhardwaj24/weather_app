@@ -125,6 +125,7 @@ class WeatherScreen extends StatelessWidget {
             ),
 
             const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 AdditionalInfoItem(),
                 AdditionalInfoItem(),
