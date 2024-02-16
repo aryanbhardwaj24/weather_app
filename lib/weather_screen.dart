@@ -94,7 +94,13 @@ class WeatherScreen extends StatelessWidget {
               height: 15,
             ),
 
-            Row(),
+            Row(
+              children: [
+                Card(
+                  child: Column(),
+                ),
+              ],
+            ),
 
             const SizedBox(
               height: 25,
