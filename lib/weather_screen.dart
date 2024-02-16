@@ -127,7 +127,12 @@ class WeatherScreen extends StatelessWidget {
             const Row(
               children: [
                 Column(
-                  children: [],
+                  children: [
+                    Icon(
+                      Icons.water_drop,
+                      size: 32,
+                    ),
+                  ],
                 )
               ],
             )
