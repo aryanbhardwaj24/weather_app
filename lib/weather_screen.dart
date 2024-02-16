@@ -91,6 +91,10 @@ class WeatherScreen extends StatelessWidget {
             ),
 
             const SizedBox(
+              height: 15,
+            ),
+
+            const SizedBox(
               height: 25,
             ),
 
