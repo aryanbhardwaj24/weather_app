@@ -97,7 +97,11 @@ class WeatherScreen extends StatelessWidget {
             Row(
               children: [
                 Card(
-                  child: Column(),
+                  child: Column(
+                    children: [
+                      Text('09:00'),
+                    ],
+                  ),
                 ),
               ],
             ),
