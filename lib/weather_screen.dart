@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:weather_app/additional_info_item.dart';
@@ -26,6 +27,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
         Uri.parse(
             'https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$openWeatherAPIKey'),
       );
+
+      final data = jsonDecode(result.body);
     } catch (e) {
       throw e.toString();
     }
