@@ -32,8 +32,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
       if (data['cod'] != '200') throw 'An unexpected error occured';
       return data;
-
-      // data['list'][0]['main']['temp'];
     } catch (e) {
       throw e.toString();
     }
@@ -74,6 +72,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
             );
           }
 
+          final data = snapshot.data!;
+
+          final currentTemp = data['list'][0]['main']['temp'];
+
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -99,7 +101,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           child: Column(
                             children: [
                               Text(
-                                '300 K',
+                                '$currentTemp K',
                                 style: const TextStyle(
                                   fontSize: 32,
                                   fontWeight: FontWeight.bold,
