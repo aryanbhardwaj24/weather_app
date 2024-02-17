@@ -23,7 +23,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     String cityName = 'Hyderabad, IN';
     final result = await http.get(
       Uri.parse(
-          'https://api.openweathermap.org/data/2.5/weather?q=$cityName&APPID=$openWeatherAPIKey'),
+          'https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$openWeatherAPIKey'),
     );
 
     print(result.body);
