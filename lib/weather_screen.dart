@@ -112,8 +112,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               const SizedBox(
                                 height: 16,
                               ),
-                              const Icon(
-                                Icons.cloud,
+                              Icon(
+                                currentSky == 'Clouds' || currentSky == 'Rain'
+                                    ? Icons.cloud
+                                    : Icons.sunny,
                                 size: 64,
                               ),
                               const SizedBox(
