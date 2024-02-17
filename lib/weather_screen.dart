@@ -34,7 +34,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
       if (data['cod'] != '200') throw 'An unexpected error occured';
 
-      temp = data['list'][0]['main']['temp'];
+      setState(() {
+        temp = data['list'][0]['main']['temp'];
+      });
     } catch (e) {
       throw e.toString();
     }
