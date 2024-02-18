@@ -163,6 +163,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 SizedBox(
                   height: 120,
                   child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
                     itemCount: numberOfHourlyForecastCardsToBeDisplayed,
                     itemBuilder: (context, index) {
                       final hourlyForecast = data['list'][index + 1];
