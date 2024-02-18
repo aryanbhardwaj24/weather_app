@@ -160,23 +160,26 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   height: 15,
                 ),
 
-                ListView.builder(
-                  itemCount: numberOfHourlyForecastCardsToBeDisplayed,
-                  itemBuilder: (context, index) {
-                    final hourlyForecast = data['list'][index + 1];
+                SizedBox(
+                  height: 120,
+                  child: ListView.builder(
+                    itemCount: numberOfHourlyForecastCardsToBeDisplayed,
+                    itemBuilder: (context, index) {
+                      final hourlyForecast = data['list'][index + 1];
 
-                    final hourlyTime = hourlyForecast['dt'];
-                    final hourlySky = hourlyForecast['weather'][0]['main'];
-                    final hourlyTemp = hourlyForecast['main']['temp'];
+                      final hourlyTime = hourlyForecast['dt'];
+                      final hourlySky = hourlyForecast['weather'][0]['main'];
+                      final hourlyTemp = hourlyForecast['main']['temp'];
 
-                    return HourlyForecastItem(
-                      timestamp: '$hourlyTime',
-                      icon: hourlySky == 'Clouds' || hourlySky == 'Rain'
-                          ? Icons.cloud
-                          : Icons.sunny,
-                      value: '$hourlyTemp',
-                    );
-                  },
+                      return HourlyForecastItem(
+                        timestamp: '$hourlyTime',
+                        icon: hourlySky == 'Clouds' || hourlySky == 'Rain'
+                            ? Icons.cloud
+                            : Icons.sunny,
+                        value: '$hourlyTemp',
+                      );
+                    },
+                  ),
                 ),
 
                 const SizedBox(
