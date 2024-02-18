@@ -22,7 +22,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<Map<String, dynamic>> getCurrentWeather() async {
     try {
-      String cityName = 'Hyderabad, IN';
+      String cityName = 'Hyderabad,IN';
       final result = await http.get(
         Uri.parse(
             'https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$openWeatherAPIKey'),
@@ -75,8 +75,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final data = snapshot.data!;
           final currentWeatherData = data['list'][0];
 
+          //main card entries
           final currentTemp = currentWeatherData['main']['temp'];
           final currentSky = currentWeatherData['weather'][0]['main'];
+
+          //additional info entries
+          final currentHumidity = currentWeatherData['main']['humidity'];
+          final currentWindSpeed = currentWeatherData['wind']['speed'];
+          final currentPressure = currentWeatherData['main']['pressure'];
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -202,23 +208,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   height: 15,
                 ),
 
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     AdditionalInfoItem(
                       icon: Icons.water_drop,
                       label: 'Humidity',
-                      value: '94',
+                      value: '$currentHumidity',
                     ),
                     AdditionalInfoItem(
                       icon: Icons.air,
                       label: 'Wind Speed',
-                      value: '7.67',
+                      value: '$currentWindSpeed',
                     ),
                     AdditionalInfoItem(
                       icon: Icons.beach_access,
                       label: 'Pressure',
-                      value: '1006',
+                      value: '$currentPressure',
                     ),
                   ],
                 )
