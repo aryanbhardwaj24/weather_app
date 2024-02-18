@@ -160,25 +160,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   height: 15,
                 ),
 
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for (int i = 0;
-                          i < numberOfHourlyForecastCardsToBeDisplayed;
-                          i++)
-                        HourlyForecastItem(
-                          timestamp: '${data['list'][i + 1]['dt']}',
-                          icon: data['list'][i + 1]['weather'][0]['main'] ==
-                                      'Clouds' ||
-                                  data['list'][i + 1]['weather'][0]['main'] ==
-                                      'Rain'
-                              ? Icons.cloud
-                              : Icons.sunny,
-                          value: '${data['list'][i + 1]['main']['temp']}',
-                        ),
-                    ],
-                  ),
+                ListView.builder(
+                  itemCount: numberOfHourlyForecastCardsToBeDisplayed,
+                  itemBuilder: (context, index) {
+                    final hourlyForecast = data['list'][index + 1];
+
+                    final hourlyTime = hourlyForecast['dt'];
+                    final hourlySky = hourlyForecast['weather'][0]['main'];
+                    final hourlyTemp = hourlyForecast['main']['temp'];
+
+                    return HourlyForecastItem(
+                      timestamp: '$hourlyTime',
+                      icon: hourlySky == 'Clouds' || hourlySky == 'Rain'
+                          ? Icons.cloud
+                          : Icons.sunny,
+                      value: '$hourlyTemp',
+                    );
+                  },
                 ),
 
                 const SizedBox(
