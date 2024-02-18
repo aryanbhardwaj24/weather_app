@@ -44,7 +44,7 @@ class HourlyForecastItem extends StatelessWidget {
               height: 8,
             ),
             Text(
-              value,
+              '$value K',
             ),
           ],
         ),

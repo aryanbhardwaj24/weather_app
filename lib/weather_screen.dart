@@ -5,6 +5,7 @@ import 'package:weather_app/additional_info_item.dart';
 import 'package:weather_app/hourly_forecast_item.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_app/secrets.dart';
+import 'package:intl/intl.dart';
 
 const numberOfHourlyForecastCardsToBeDisplayed = 5;
 
@@ -168,12 +169,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     itemBuilder: (context, index) {
                       final hourlyForecast = data['list'][index + 1];
 
-                      final hourlyTime = hourlyForecast['dt_txt'];
+                      final hourlyTime =
+                          DateTime.parse(hourlyForecast['dt_txt']);
                       final hourlySky = hourlyForecast['weather'][0]['main'];
                       final hourlyTemp = hourlyForecast['main']['temp'];
 
                       return HourlyForecastItem(
-                        timestamp: '$hourlyTime',
+                        timestamp: DateFormat.j().format(hourlyTime),
                         icon: hourlySky == 'Clouds' || hourlySky == 'Rain'
                             ? Icons.cloud
                             : Icons.sunny,
