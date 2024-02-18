@@ -168,7 +168,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     itemBuilder: (context, index) {
                       final hourlyForecast = data['list'][index + 1];
 
-                      final hourlyTime = hourlyForecast['dt'];
+                      final hourlyTime = hourlyForecast['dt_txt'];
                       final hourlySky = hourlyForecast['weather'][0]['main'];
                       final hourlyTemp = hourlyForecast['main']['temp'];
 
