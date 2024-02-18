@@ -147,7 +147,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
                 //weather forecast cards
                 const Text(
-                  'Weather Forecast',
+                  'Hourly Forecast',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
