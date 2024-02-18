@@ -6,6 +6,8 @@ import 'package:weather_app/hourly_forecast_item.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_app/secrets.dart';
 
+const numberOfHourlyForecastCardsToBeDisplayed = 5;
+
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
 
@@ -158,35 +160,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   height: 15,
                 ),
 
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      HourlyForecastItem(
-                        timestamp: '09:00',
-                        icon: Icons.cloud,
-                        value: '320.12',
-                      ),
-                      HourlyForecastItem(
-                        timestamp: '12:00',
-                        icon: Icons.sunny,
-                        value: '322.17',
-                      ),
-                      HourlyForecastItem(
-                        timestamp: '15:00',
-                        icon: Icons.sunny,
-                        value: '321.41',
-                      ),
-                      HourlyForecastItem(
-                        timestamp: '18:00',
-                        icon: Icons.cloud,
-                        value: '319.71',
-                      ),
-                      HourlyForecastItem(
-                        timestamp: '21:00',
-                        icon: Icons.cloud,
-                        value: '316.58',
-                      ),
+                      for (int i = 0;
+                          i < numberOfHourlyForecastCardsToBeDisplayed;
+                          i++)
+                        HourlyForecastItem(
+                          timestamp: '${data['list'][i + 1]['dt']}',
+                          icon: data['list'][i + 1]['weather'][0]['main'] ==
+                                      'Clouds' ||
+                                  data['list'][i + 1]['weather'][0]['main'] ==
+                                      'Rain'
+                              ? Icons.cloud
+                              : Icons.sunny,
+                          value: '${data['list'][i + 1]['main']['temp']}',
+                        ),
                     ],
                   ),
                 ),
